@@ -9,6 +9,11 @@ RUN useradd rocky
 RUN echo "rocky:123.com" | chpasswd  
 RUN echo "rocky   ALL=(ALL)       ALL" >> /etc/sudoers
 
+RUN mkdir /data
+RUN cd /data
+RUN wget https://s3.amazonaws.com/Minecraft.Download/versions/1.8.7/minecraft_server.1.8.7.jar
+RUN java -jar minecraft_server.1.8.7.jar nogui
+
 RUN ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key 
 RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key
 
