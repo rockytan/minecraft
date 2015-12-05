@@ -4,9 +4,6 @@
 FROM centos:latest
 MAINTAINER Rocky "irockytan@gmail.com"
 
-ADD aliyun-mirror.repo /etc/yum.repos.d/CentOS-Base.repo
-ADD aliyun-epel.repo /etc/yum.repos.d/epel.repo
-
 RUN yum install -y npm git sudo
 WORKDIR /app
 
